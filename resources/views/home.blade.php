@@ -35,7 +35,7 @@
             <div class="textBx primary">
                 <h2>Digital <br><span>Wedding Invitation</span></h2>
                 <h3>Online Digital Wedding Invitation</h3>
-                <a class="btn bg-tertiary secondary" href="#about">Try Now</a>
+                <a class="btn bg-tertiary secondary" href="#work">Try Now</a>
             </div>
         </section>
         
