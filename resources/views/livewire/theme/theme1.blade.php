@@ -20,9 +20,9 @@
       <h2 class="mt-4 md:mt-2 slide-in-top">The Wedding of</h2>
       <img id="figure1" class="mx-auto w-[80%] md:w-[20%] !-scale-x-100 scale-in-center" src="{{ asset('images/figure.png') }}" alt="">
       <div id="coupleName" class="flex flex-col flex-col-reverse xs:flex-row xs:flex-row-reverse justify-center mt-10 md:mt-8">
-        <h1 id="brideName" class="slide-in-left">Putri</h1>
+        <h1 id="brideName" class="slide-in-left">Celina</h1>
         <h1 class="scale-in-center">&nbsp;&&nbsp;</h1>
-        <h1 id="groomName" class="slide-in-right">Putra</h1>
+        <h1 id="groomName" class="slide-in-right">Kevin</h1>
       </div>
       <div id="yth" class="text-[1.5em] md:mb-2 slide-in-bottom"></div>
       <button id="btnOpen" class="w-32 border border-[navy] hover:bg-slate-100 hover:text-gray-700 font-bold py-1 px-2 rounded inline-flex items-center z-[999]">
@@ -65,16 +65,16 @@
       <div id="coupleFigure" class="flex flex-col md:flex-row md:flex-row-reverse justify-center place-items-center">
         <div id="bride" class="flex flex-col justify-center place-items-center">
           <img class="w-80" src="/images/bride.png" alt="" data-aos="fade-up">
-          <p class="font-[adlery-pro] text-4xl mt-4" data-aos="fade-bottom" data-aos-duration="500">Putri Hawa</p>
-          <p data-aos="fade-up">Putri pertama dari bapak Hawa dan ibu Hawa</p>
+          <p class="font-[adlery-pro] text-4xl mt-4" data-aos="fade-bottom" data-aos-duration="500">Celina Willson</p>
+          <p data-aos="fade-up">Putri pertama dari bapak Juan Willson dan ibu Diana Willson</p>
         </div>
         <div class="w-16 mt-6 heartbeat" data-aos="zoom-in" data-aos-duration="2000">
           <svg viewBox="-15.41 0 126.74 126.74" xmlns="http://www.w3.org/2000/svg" fill="deeppink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill: var(--primary);}</style> </defs> <g id="Layer_2" data-name="Layer 2"> <g id="Layer_1-2" data-name="Layer 1"> <path d="M51.31,27.71c3.14-4.32,5.57-7.81,8.14-11.18,3.41-4.48,8.16-7.16,13.23-9.25A13.76,13.76,0,0,1,78.5,6.22c8.49.52,16.2,8,17.14,16.56,1.14,10.28-1.35,20-5.58,29.15A156.23,156.23,0,0,1,70.73,84.24c-6.9,8.67-14.2,17.12-18.87,27.35-1.77,3.89-3.5,7.8-5.28,11.68a5.53,5.53,0,0,1-9.68,1.09A13.66,13.66,0,0,1,35,120.52c-4.77-14.21-12.35-27.06-19.62-40-5.07-9-9.77-18.2-12.59-28.13C-.75,39.72-1.63,26.93,4.32,14.62a35.18,35.18,0,0,1,6.19-9.16A17.46,17.46,0,0,1,31.8,2.27c9,5.18,16.1,11.83,18.41,22.46A28.62,28.62,0,0,0,51.31,27.71ZM47.89,50.89c-.61-.76-1.68-1.52-2-2.51-1.31-4.67-3.16-9.37-3.4-14.12-.46-9.08-4.81-15.65-11.4-21.2-5.58-4.71-10.79-4-15.29,2C11.1,21.33,10,28.51,10.39,36.13c.46,9.64,3.68,18.52,8,26.95,6.1,12,12.57,23.76,19,35.52,1.45,2.64,2.07,5.9,5.69,8.77.67-1.22,1.14-2.25,1.76-3.18,4.46-6.62,8.9-13.26,13.43-19.83S67.79,71.45,72,64.67c5-8,9.38-16.4,11.76-25.61,1.13-4.4,2.51-9,2.27-13.44-.51-9.44-5.55-12.23-13.72-7A32.7,32.7,0,0,0,61.14,31.37c-2.6,5.07-5,10.27-7.12,15.55C52.87,49.79,51,50.86,47.89,50.89Z"></path> <path class="cls-1" d="M47.89,50.89c3.11,0,5-1.1,6.13-4,2.13-5.28,4.52-10.48,7.12-15.55A32.7,32.7,0,0,1,72.33,18.65c8.17-5.26,13.21-2.47,13.72,7,.24,4.44-1.14,9-2.27,13.44C81.4,48.27,77,56.67,72,64.67c-4.23,6.78-9.18,13.11-13.73,19.69s-9,13.21-13.43,19.83c-.62.93-1.09,2-1.76,3.18-3.62-2.87-4.24-6.13-5.69-8.77-6.48-11.76-12.95-23.54-19-35.52-4.29-8.43-7.51-17.31-8-26.95C10,28.51,11.1,21.33,15.84,15c4.5-6,9.71-6.69,15.29-2,6.59,5.55,10.94,12.12,11.4,21.2.24,4.75,2.09,9.45,3.4,14.12C46.21,49.37,47.28,50.13,47.89,50.89Z"></path> </g> </g> </g></svg>
         </div>
         <div id="groom" class="flex flex-col justify-center">
           <img class="w-80" src="/images/groom.png" alt="" data-aos="fade-up">
-          <p class="font-[adlery-pro] text-4xl mt-4" data-aos="fade-bottom" data-aos-duration="500">Putra Adam</p>
-          <p data-aos="fade-up">Putra pertama dari bapak Adam dan ibu Adam</p>
+          <p class="font-[adlery-pro] text-4xl mt-4" data-aos="fade-bottom" data-aos-duration="500">Kevin Ruiz</p>
+          <p data-aos="fade-up">Putra pertama dari bapak Nicholas Ruiz dan ibu Petra Ruiz</p>
         </div>
       </div>
     </section>
