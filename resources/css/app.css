@@ -1,325 +1,191 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
-:root {
-  --primary: #00113F;
-  --secondary: #fff;
-  --tertiary: #2196f3;
-  --quaternary: #222;
-  --quinary: #f7f7f7;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
-.primary {
-  color: var(--primary);
-}
-.secondary {
-  color: var(--secondary);
-}
-.tertiary {
-  color: var(--tertiary);
-}
-.quaternary {
-  color: var(--quaternary);
-}
-.quinary {
-  color: var(--quinary);
-}
-
-.bg-primary {
-  background: var(--primary);
-}
-.bg-secondary {
-  background: var(--secondary);
-}
-.bg-tertiary {
-  background: var(--tertiary);
-}
-.bg-quaternary {
-  background: var(--quaternary);
-}
-.bg-quinary {
-  background: var(--quinary);
+  @apply m-0 p-0 box-border font-sans scroll-smooth;
 }
 
 section {
-  padding: 100px;
+  @apply p-[100px];
 }
 
 .banner {
-   background: url('/public/images/banner.jpg');
-   min-height: 100vh;
-   background-size: cover;
-   background-position: right;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+  @apply bg-main-banner bg-cover bg-right min-h-screen flex justify-between items-center;
 }
 
 .banner h2 {
-  font-size: 3em;
-  font-weight: 500;
-  line-height: 1.5em;
+  @apply text-[3em] font-medium leading-[1.5em];
 }
 
 .banner h2 span {
-  font-size: 1.5em;
-  font-weight: 700;
+  @apply text-[1.5em] font-bold;
 }
 
 .banner h3 {
-  font-size: 1.5em;
-  font-weight: 500;
+  @apply text-[1.5em] font-medium;
 }
 
 .btn {
-  position: relative;
-  display: inline-block;
-  padding: 10px 30px;
-  margin-top: 20px;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-weight: 500;
+  @apply relative inline-block py-[10px] px-[30px] mt-[20px] text-[18px] uppercase tracking-[2px] font-medium;
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.5s;
-  z-index: 2;
+  @apply fixed top-0 left-0 w-full py-[40px] px-[100px] flex justify-between items-center transition-[0.5s] z-[2];
 }
 
 header.sticky {
-  background: var(--secondary);
-  padding: 20px 100px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  @apply bg-secondary py-[20px] px-[100px] shadow-lg;
 }
 
 header.sticky .logo,
 header.sticky .toggle,
 header.sticky ul li a {
-  color: var(--primary);
+  @apply text-primary
 }
 
 header .logo {
- font-size: 24px;
- text-transform: uppercase;
- text-decoration: none;
- font-weight: 700;
- letter-spacing: 2px;
+  @apply text-[24px] font-bold tracking-[2px] uppercase;
 }
 
 header .toggle #menuOpen,
 header .toggle #menuClose {
-  display: none;
+  @apply hidden;
 }
 
 header ul {
-  position: relative;
-  display: flex;
+  @apply flex relative;
 }
 
 header ul li {
-  position: relative;
-  list-style: none;
+  @apply relative list-none;
 }
 
 header ul li a {
-  position: relative;
-  color: var(--secondary);
-  display: inline-block;
-  margin: 0 15px;
-  text-decoration: none;
+  @apply relative text-secondary inline-block mx-[15px];
 }
 
 header ul li a:hover {
-  color: var(--tertiary);
+  @apply text-tertiary
 }
 
 .heading {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 30px;
+  @apply w-full text-center mb-[30px];
 }
 
 .heading h2 {
-  font-weight: 600;
-  font-size: 30px;
+  @apply text-[30px] font-semibold;
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
+  @apply flex justify-between;
 }
 
 .contentBx {
-  text-align: justify;
-  padding-right: 30px;
+  @apply text-justify pr-[30px];
 }
 
 .contentBx h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  @apply text-[24px] mb-[10px];
 }
 
 .w50 {
-  min-width: 50%
+  @apply min-w-[50%];
 }
 
 img {
-  max-width: 100%;
+  @apply max-w-full;
 }
 
 .services .content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  @apply flex justify-center flex-wrap flex-row;
 }
 
 .services .content .servicesBx {
-  padding: 40px 20px;
-  background: var(--primary);
-  color: var(--secondary);
-  max-width: 340px;
-  margin: 20px;
-  text-align: center;
-  transition: 0.5s;
+  @apply flex flex-col place-items-center py-[40px] px-[20px] bg-primary text-secondary max-w-[340px] m-[20px] text-center transition-[0.5s];
 }
 
 .services .content .servicesBx:hover {
-  background: var(--tertiary);
+  @apply bg-tertiary;
 }
 
 .services .content .servicesBx img {
-  max-width: 80px;
-  filter: invert(1);
+  @apply max-w-[80px] invert-[1];
 }
 
 .services .content .servicesBx h2 {
-  font-size: 20px;
-  font-weight: 600;
+  @apply text-[20px] font-semibold;
 }
 
 .work .content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  @apply flex justify-between flex-wrap;
 }
 
 .work .content .workBx {
-  width: 50%;
-  padding: 20px;
+  @apply w-1/2 p-[20px];
 }
 
 .work .content .workBx img {
-  max-width: 100%;
+  @apply max-w-full;
 }
 
 .testimonial .content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  @apply flex justify-between flex-wrap;
 }
 
 .testimonial .content .testiBx {
-  max-width: calc(50% - 40px);
-  padding: 60px 40px;
-  margin: 20px;
-  background: var(--tertiary);
+  @apply max-w-[calc(50%-40px)] py-[60px] px-[40px] m-[20px] bg-tertiary;
 }
 
 .testimonial .content .testiBx p {
-  color: var(--secondary);
-  font-style: italic;
-  font-size: 16px;
-  font-weight: 300;
+  @apply text-secondary italic text-[16px] font-light;
 }
 
 .testimonial .content .testiBx h3 {
-  margin-top: 40px;
-  text-align: end;
-  color: var(--secondary);
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1em;
+  @apply text-secondary font-semibold text-[20px] mt-[40px] text-end leading-[1em];
 }
 
 .testimonial .content .testiBx h3 span {
-  font-size: 14px;
-  font-weight: 400;
+  @apply text-[14px] font-normal;
 }
 
 .formBx {
-  min-width: 60%;  
+  @apply min-w-[60%]
 }
 
 .formBx form {
-  display: flex;
-  flex-direction: column;
+  @apply flex flex-col;
 }
 
 .formBx form h3,
 .contactInfo h3 {
-  color: var(--secondary);
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  @apply text-secondary text-[20px] font-medium mb-[10px];
 }
 
 .formBx form input,
 .formBx form textarea {
-  margin-bottom: 20px;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  background: var(--quaternary);
-  color: var(--secondary);
+  @apply mb-[20px] p-[15px] text-[16px] bg-quaternary text-secondary border-none outline-none;
 }
 
 .formBx form input[type=submit] {
-  max-width: 100px;
-  background: var(--tertiary);
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  @apply max-w-[100px] bg-tertiary cursor-pointer uppercase tracking-[2px];
 }
 
 .contactInfo {
-  min-width: 40%;
+  @apply min-w-[40%];
 }
 
 .contactInfoBx {
-  position: relative;
+  @apply relative;
 }
 
 .contactInfoBx .box {
-  position: relative;
-  padding: 20px 0;
-  display: flex;
+  @apply flex relative py-[20px];
 }
 
 .contactInfoBx .box .icon {
-  min-width: 40px;
-  padding-top: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  @apply min-w-[40px] pt-[4px] flex justify-center items-start;
 }
 
 .contactInfoBx .box .text {
@@ -328,128 +194,102 @@ img {
   margin-left: 20px;
   font-size: 16px;
   font-weight: 300;
+  @apply flex flex-col ml-[20px] text-[16px] font-light;
 }
 
 .contactInfoBx .box .text h3 {
-  color: var(--tertiary);
+  @apply text-tertiary;
 }
 
 .load-more {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-  text-decoration: none;
+  @apply flex justify-center my-[40px];
 }
 
 /* Responsive */
 @media (max-width: 991px) {
   header,
   header.sticky {
-    padding: 20px 10px;
-    z-index: 2;
+    @apply py-[20px] px-[10px] z-[2];
   }
   
   .menu {
-    position: fixed;
-    top: 75px;
-    left: -100%;
-    display: block;
-    padding: 100px 50px;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    background: var(--secondary);
-    transition: 0.5s;
-    z-index: 1;
-    border-top: 1px solid rgba(0,0,0,0.2);
+    @apply fixed top-[75px] -left-[100%] block py-[100px] px-[50px] text-center w-full h-screen bg-secondary transition-[0.5s] z-[1] border-t-[1px] border-solid border-[rgba(0,0,0,0.2)];
   }
   
   .menu.active {
-    left: 0;
+    @apply left-0;
   }
   
   header ul li a {
-    color: var(--primary);
-    font-size: 24px;
-    margin: 10px;
+    @apply text-primary text-[24px] m-[10px];
   }
   
   header .toggle #menuOpen,
   header .toggle.active #menuClose {
-    display: flex;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    @apply flex items-center w-[40px] h-[40px] cursor-pointer;
   }
   
   header .toggle.active #menuOpen {
-    display: none;
+    @apply hidden;
   }
   
   section {
-    padding: 100px 20px;
+    @apply py-[100px] px-[20px];
   }
   
   .banner {
-    padding: 150px 20px 100px;
+    @apply pt-[150px] px-[20px] pb-[100px];
   }
   
   .banner h2 {
-    font-size: 1.5em;
+    @apply text-[1.5em];
   }
   
   .banner h3 {
-    font-size: 1em;
+    @apply text-[1em];
   }
   
   .btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    @apply mt-[10px] py-[10px] px-[20px] text-[16px];
   }
   
   .heading h2 {
-    font-size: 24px;
+    @apply text-[24px];
   }
   
   .contentBx {
-    padding-right: 0;  
+    @apply pr-0;
   }
   
   .contentBx h3 {
-    font-size: 20px;
+    @apply text-[20px];
   }
   
   .content {
-    flex-direction: column;
+    @apply flex-col;
   }
   
   .w50 {
-    margin-bottom: 20px;
+    @apply mb-[20px];
   }
   
   .services .content .servicesBx {
-    margin: 10px;
+    @apply m-[10px];
   }
   
   .work .content .workBx {
-    width: 100%;
-    padding: 10px;
+    @apply w-full p-[10px];
   }
   
   .testimonial .content .testiBx {
-    max-width: calc(100% - 20px);
-    padding: 40px 20px;
-    margin: 10px;
-    background: var(--tertiary);
+    @apply max-w-[calc(100%-20px)] py-[40px] px-[20px] m-[10px] bg-tertiary;
   }
   
   .testimonial .content .testiBx h3 {
-    margin-top: 20px;
+    @apply mt-[20px];
   }
   
   .contactInfo {
-    margin: 20px 0;
+    @apply my-[20px] mx-0;
   }
 }

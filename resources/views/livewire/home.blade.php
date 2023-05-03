@@ -2,27 +2,27 @@
 
 <x-page-layout>
     <x-slot name="header">
-        <a class="logo primary" href="#home">Wedding</a>
-        <div class="toggle primary" onclick="toggleMenu()">
+        <a class="logo text-primary" href="#home">Wedding</a>
+        <div class="toggle text-primary" onclick="toggleMenu()">
             <i id="menuOpen" class="fas fa-bars"></i>
             <i id="menuClose" class="fas fa-times"></i>
         </div>
         <ul class="menu">
-            <li><a href="#home" class="primary">Home</a></li>
-            <li><a href="#about" class="primary">About</a></li>
-            <li><a href="#services" class="primary">Services</a></li>
-            <li><a href="#work" class="primary">Products</a></li>
-            <li><a href="#testimonial" class="primary">Testimonial</a></li>
-            <li><a href="#contact" class="primary">Contact</a></li>
+            <li><a href="#home" class="text-primary">Home</a></li>
+            <li><a href="#about" class="text-primary">About</a></li>
+            <li><a href="#services" class="text-primary">Services</a></li>
+            <li><a href="#work" class="text-primary">Products</a></li>
+            <li><a href="#testimonial" class="text-primary">Testimonial</a></li>
+            <li><a href="#contact" class="text-primary">Contact</a></li>
         </ul>
     </x-slot>
     
     <div>
         <section class="banner" id="home">
-            <div class="textBx primary">
+            <div class="textBx text-primary">
                 <h2>Digital <br><span>Wedding Invitation</span></h2>
                 <h3>Online Digital Wedding Invitation</h3>
-                <a class="btn bg-tertiary secondary" href="#work">Try Now</a>
+                <a class="btn bg-tertiary text-secondary" href="#work">Try Now</a>
             </div>
         </section>
         
@@ -44,7 +44,7 @@
         </section>
         
         <section class="services bg-primary" id="services">
-            <div class="heading secondary">
+            <div class="heading text-secondary">
                 <h2>Our Services</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="load-more">
-                <a class="btn bg-tertiary secondary" href="#">Load More</a>
+                <a class="btn bg-tertiary text-secondary" href="#">Load More</a>
             </div>
         </section>
         
@@ -136,11 +136,11 @@
         </section>
         
         <section class="contact bg-primary" id="contact">
-            <div class="heading secondary">
+            <div class="heading text-secondary">
                 <h2>Contact Us</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div class="content secondary">
+            <div class="content text-secondary">
                 <div class="contactInfo">
                     <h3>Contact Info</h3>
                     <div class="contactInfoBx">
