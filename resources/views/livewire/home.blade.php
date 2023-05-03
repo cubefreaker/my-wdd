@@ -84,21 +84,14 @@
         
         <section class="work" id="work">
             <div class="heading">
-                <h2>Our Latest Products</h2>
+                <h2>Tema Undangan</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="content">
                 <div class="workBx">
-                    <img src={{ asset('images/product1.jpg') }} alt="">
-                </div>
-                <div class="workBx">
-                    <img src={{ asset('images/product2.jpg') }} alt="">
-                </div>
-                <div class="workBx">
-                    <img src={{ asset('images/product3.jpg') }} alt="">
-                </div>
-                <div class="workBx">
-                    <img src={{ asset('images/product4.jpg') }} alt="">
+                    <a href="/theme1" target="_blank">
+                        <img src={{ asset('images/thumbnail/theme1.png') }} alt="">
+                    </a>
                 </div>
             </div>
             <div class="load-more">
@@ -191,4 +184,4 @@
             </div>
         </section>
     </div>
-</x-layouts-app>
+</x-page-layout>

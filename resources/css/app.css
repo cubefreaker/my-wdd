@@ -119,15 +119,15 @@ img {
 }
 
 .work .content {
-  @apply flex justify-between flex-wrap;
+  @apply flex justify-around flex-wrap;
 }
 
 .work .content .workBx {
-  @apply w-1/2 p-[20px];
+  @apply w-1/2 p-[20px] flex justify-center;
 }
 
 .work .content .workBx img {
-  @apply max-w-full;
+  @apply max-w-full hover:scale-105 transition-[0.5s];
 }
 
 .testimonial .content {
