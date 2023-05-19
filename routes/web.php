@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class);
 Route::get('/theme1', \App\Http\Livewire\Theme\Theme1::class);
+Route::get('/wisnu/tema1', \App\Http\Livewire\Theme\Wisnu\Tema1::class);
