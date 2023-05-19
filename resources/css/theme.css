@@ -13,14 +13,6 @@
 }
 
 :root {
-  --primary: #ADD8E6;
-  --secondary: #000080;
-  font-family: milk-run;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: var(--secondary);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +20,16 @@
   -webkit-text-size-adjust: 100%;
 
   scroll-behavior: smooth;
+}
+
+.main-theme1 {
+  --primary: #ADD8E6;
+  --secondary: #000080;
+  font-family: milk-run;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--secondary);
   overflow:hidden;
 }
 

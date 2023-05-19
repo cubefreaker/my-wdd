@@ -1,6 +1,7 @@
 <x-slot name="title">{{ $title }}</x-slot>
+<x-slot name="themeClass">{{ $themeClass }}</x-slot>
 
-<div>
+<div id="theme1">
   <div id="app" class="flex flex-col place-items-center text-center">
     <section id="cover" class="flex flex-col place-items-center justify-between">
       <img src="{{ asset('images/leaf_1.png') }}" alt="" class="absolute w-28 md:w-72 -top-10 -left-10 md:-top-28 md:-left-24 hidden lg:block">

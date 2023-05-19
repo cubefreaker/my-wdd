@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ $themeClass ?? ''}}">
   <head>
     <meta charset="UTF-8" />
     {{-- <link rel="icon" type="image/ico" href="/icon.ico" /> --}}

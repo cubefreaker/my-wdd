@@ -10,6 +10,7 @@ class Theme1 extends Component
     {
         $data = [
             'title' => 'Theme 1',
+            'themeClass' => 'main-theme1'
         ];
         return view('livewire.theme.theme1', $data)->layout('layouts.theme');
     }
