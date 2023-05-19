@@ -1,5 +1,8 @@
+<x-slot name="title">{{ $title }}</x-slot>
+@vite(['resources/js/theme-general.js'])
+
 <div>
-<section class="fixed flex justify-center w-screen bottom-2">
+    <section class="fixed flex justify-center w-screen bottom-2">
         <ul class="flex justify-around place-items-center bg-white h-[45px] w-[80%] rounded-lg shadow"> 
             <li>
                 <a href="#home">
