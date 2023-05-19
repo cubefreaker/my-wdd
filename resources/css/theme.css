@@ -33,18 +33,14 @@
   overflow:hidden;
 }
 
-h1, h2 {
+.main-theme-h1, .main-theme-h2 {
   font-family: adlery-pro;
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-section:not(:first-child) {
+.main-theme-section:not(:first-child) {
   @apply bg-[var(--primary)] p-10 w-screen min-h-screen;
-}
-
-#cover {
-  @apply !bg-[url(/public/icons/wave.svg)] bg-cover p-10 w-screen min-h-screen;
 }
 
 .event-card {

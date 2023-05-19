@@ -1,9 +1,11 @@
 <x-slot name="title">{{ $title }}</x-slot>
 <x-slot name="themeClass">{{ $themeClass }}</x-slot>
 
-<div id="theme1">
+@vite(['resources/js/theme.js'])
+
+<div>
   <div id="app" class="flex flex-col place-items-center text-center">
-    <section id="cover" class="flex flex-col place-items-center justify-between">
+    <section id="cover" class="main-theme-section flex flex-col place-items-center justify-between !bg-[url(/public/icons/wave.svg)] bg-cover p-10 w-screen min-h-screen">
       <img src="{{ asset('images/leaf_1.png') }}" alt="" class="absolute w-28 md:w-72 -top-10 -left-10 md:-top-28 md:-left-24 hidden lg:block">
       <img src="{{ asset('images/leaf_1.png') }}" alt="" class="absolute w-28 md:w-72 -top-16 left-4 md:-top-44 md:left-8 hidden lg:block">
       <img src="{{ asset('images/leaf_1.png') }}" alt="" class="absolute -scale-x-100 w-28 md:w-72 -top-10 -right-10 md:-top-28 md:-right-24 hidden lg:block">
@@ -18,12 +20,12 @@
       <img src="{{ asset('images/leaf_3.png') }}" alt="" class="absolute -scale-x-100 -rotate-[100deg] w-28 md:w-72 -top-[75px] right-24 md:-top-44 md:right-60 hidden lg:block">
       
       <img class="mx-auto my-[1em] w-[60%] md:h-[calc(100vh-50px)] md:w-[30vw] absolute left-[50%] translate-x-[-50%] z-0" src="{{ asset('images/gate_border.png') }}" alt="">
-      <h2 class="mt-4 md:mt-2 slide-in-top">The Wedding of</h2>
-      <img id="figure1" class="mx-auto w-[80%] md:w-[20%] !-scale-x-100 scale-in-center" src="{{ asset('images/figure.png') }}" alt="">
+      <h2 class="main-theme-h2 mt-4 md:mt-2 slide-in-top">The Wedding of</h2>
+      <img id="figure1" class="mx-auto w-[80%] md:w-[20%] !-scale-x-100 scale-in-center" src="./images/figure.png" alt="">
       <div id="coupleName" class="flex flex-col flex-col-reverse xs:flex-row xs:flex-row-reverse justify-center mt-10 md:mt-8">
-        <h1 id="brideName" class="slide-in-left">Celina</h1>
-        <h1 class="scale-in-center">&nbsp;&&nbsp;</h1>
-        <h1 id="groomName" class="slide-in-right">Kevin</h1>
+        <h1 id="brideName" class="main-theme-h1 slide-in-left">Celina</h1>
+        <h1 class="main-theme-h1 scale-in-center">&nbsp;&&nbsp;</h1>
+        <h1 id="groomName" class="main-theme-h1 slide-in-right">Kevin</h1>
       </div>
       <div id="yth" class="text-[1.5em] md:mb-2 slide-in-bottom"></div>
       <button id="btnOpen" class="w-32 border border-[navy] hover:bg-slate-100 hover:text-gray-700 font-bold py-1 px-2 rounded inline-flex items-center z-[999]">
@@ -32,9 +34,9 @@
       </button>
       <div class="h-8"></div>
     </section>
-    <section id="date" class="flex flex-col place-items-center justify-between py-20">
+    <section id="date" class="main-theme-section flex flex-col place-items-center justify-between py-20">
       <img class="mx-auto my-[2em] w-[60%] md:h-[calc(100vh-100px)] md:w-[30vw] absolute left-[50%] !-translate-x-[50%] z-0" src="/images/gate_border.png" alt="" data-aos="zoom-out">
-      <h2 class="mt-8 relative" data-aos="fade-up">Save The Date</h2>
+      <h2 class="main-theme-h2 mt-8 relative" data-aos="fade-up">Save The Date</h2>
       <img id="figure2" class="w-[70%] md:w-[20%] -m-20 md:-m-0 !-scale-x-100" src="/images/figure.png" alt="" data-aos="zoom-in">
       <p data-aos="zoom-in"><span class="text-2xl font-extrabold my-4 event"></span></p>
       <div id="countdown" class="w-[70%] md:w-[20%] relative flex justify-between text-2xl md:text-4xl">
@@ -57,7 +59,7 @@
       </div>
       <div class="h-8"></div>
     </section>
-    <section id="brideAndGroom" class="-mt-32 md:-mt-0 pb-60 md:pb-0">
+    <section id="brideAndGroom" class="main-theme-section -mt-32 md:-mt-0 pb-60 md:pb-0">
       <img class="relative left-[50%] !-translate-x-[50%] w-40" src="/images/rose.png" alt="" data-aos="zoom-in">
       <div class="my-6 text-center" data-aos="zoom-in">
         <h3 class="text-2xl mb-2">Assalamu'alaikum Warahmatullahi Wabarakatuh</h3>
@@ -79,7 +81,7 @@
         </div>
       </div>
     </section>
-    <section id="schedule">
+    <section id="schedule" class="main-theme-section">
       <img class="relative left-[50%] !-translate-x-[50%] w-60" src="/images/bismillah.png" alt="" data-aos="zoom-in">
       <div class="my-8 text-center" data-aos="zoom-in">
         <p>Kami mengundang Bapak/Ibu/Saudara/i, untuk menghadiri Resepsi Pernikahan</p>
@@ -169,13 +171,13 @@
         </div>
       </span>
     </section>
-    <section id="location" class="-mt-10 -mb-20 md:-mt-0 md:-mb-0"> 
+    <section id="location" class="main-theme-section -mt-10 -mb-20 md:-mt-0 md:-mb-0"> 
       <div class="flex flex-col justify-center place-items-center">
         <p class="font-[adlery-pro] text-4xl my-4" data-aos="fade-bottom" data-aos-duration="500">Peta Lokasi Acara</p>
         <div id="map" class="h-[500px] w-full md:w-[80%]"></div>
       </div>
     </section>
-    <section id="prayer" class="-mt-10">
+    <section id="prayer" class="main-theme-section -mt-10">
       <div class="flex flex-col justify-center place-items-center">
         <p class="text-xl" data-aos="zoom-in">
           "Semoga Allah menghimpun yang  terserak dari keduanya, memberkati mereka berdua  dan kiranya Allah meningkatkan kualitas keturunan mereka, menjadikannya pembuka pintu rahmat, sumber ilmu dan hikmah, serta pemberi rasa aman bagi umat"

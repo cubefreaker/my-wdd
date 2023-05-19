@@ -5,9 +5,20 @@ module.exports = {
     "./resources/**/*.js",
   ],
   theme: {
-    extend: {},
-    fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+    extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
+      colors: {
+        primary: "#00113F",
+        secondary: "#ffffff",
+        tertiary: "#2196f3",
+        quaternary: "#222222",
+        quinary: "#f7f7f7",
+      },
+      backgroundImage: {
+        "main-banner": "url('/public/images/banner.jpg')",
+      }
     },
     screens: {
       'xs': '380px',
@@ -17,16 +28,6 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
-    colors: {
-      primary: "#00113F",
-      secondary: "#ffffff",
-      tertiary: "#2196f3",
-      quaternary: "#222222",
-      quinary: "#f7f7f7",
-    },
-    backgroundImage: {
-      "main-banner": "url('/public/images/banner.jpg')",
-    }
   },
   plugins: [],
 }

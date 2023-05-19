@@ -12,7 +12,7 @@
     <title>{{ $title ?? 'Theme' }}</title>
     
     <!-- Scripts -->
-    @vite(['resources/css/theme.css', 'resources/js/theme.js'])
+    @vite(['resources/css/theme.css'])
     <livewire:styles />
   </head>
   <body>
