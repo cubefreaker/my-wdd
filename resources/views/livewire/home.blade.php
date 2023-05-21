@@ -88,15 +88,25 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="content">
-                <div class="workBx">
-                    <a href="/theme1" target="_blank">
-                        <img src={{ asset('images/thumbnail/theme1.png') }} alt="">
-                    </a>
-                </div>
+                @foreach($listUndangan as $undangan)
+                    <div class="workBx">
+                        <div class="bg-green-200 text-green-800 font-semibold px-3 py-1 rounded-2xl">
+                            @if ($undangan->undangan_group->price_amount == 0)
+                                Gratis
+                            @else
+                                Rp. {{ number_format($undangan->undangan_group->price_amount, 2) }}
+                            @endif
+                        </div>
+                        <a href="/tema/{{ $undangan->id }}" target="_blank">
+                            <img src={{ asset($undangan->getFirstMediaUrl('undanganGroupImg', 'thumb')) }} alt="">
+                        </a>
+                        <p>{{ $undangan->nama_undangan }}</p>
+                    </div>
+                @endforeach
             </div>
-            <div class="load-more">
+            {{-- <div class="load-more">
                 <a class="btn bg-tertiary text-secondary" href="#">Load More</a>
-            </div>
+            </div> --}}
         </section>
         
         <section class="testimonial bg-quinary" id="testimonial">

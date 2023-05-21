@@ -13,25 +13,31 @@ return new class extends Migration
     {
         Schema::create('user_undangan_detail', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_sample', 1)->default(0)->comment('0: not sample, 1: sample data');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('undangan_id');
-            $table->string('groom', 150)->default('Adam');
-            $table->string('bride', 150)->default('Hawa');
+            $table->string('groom_name', 150);
+            $table->string('bride_name', 150);
             $table->string('groom_parent_text', 255)->nullable();
             $table->string('bride_parent_text', 255)->nullable();
-            $table->date('date_akad');
-            $table->time('time_akad_start')->default('00:00:00');
-            $table->time('time_akad_end')->default('00:00:00');
-            $table->date('date_resepsi');
+            $table->date('date_akad')->nullable();
+            $table->time('time_akad_start')->default('00:00:00')->nullable();
+            $table->time('time_akad_end')->default('00:00:00')->nullable();
+            $table->date('date_resepsi')->nullable();
             $table->time('time_resepsi_start')->default('00:00:00');
-            $table->time('time_resepsi_end')->default('00:00:00');
-            $table->date('date_unduhmantu');
-            $table->time('time_unduhmantu_start')->default('00:00:00');
-            $table->time('time_unduhmantu_end')->default('00:00:00');
-            $table->text('address')->nullable();
-            $table->longText('map_address')->nullable();
+            $table->time('time_resepsi_end')->default('00:00:00')->nullable();
+            $table->date('date_unduhmantu')->nullable();
+            $table->time('time_unduhmantu_start')->default('00:00:00')->nullable();
+            $table->time('time_unduhmantu_end')->default('00:00:00')->nullable();
+            $table->text('address_akad')->nullable();
+            $table->text('address_resepsi')->nullable();
             $table->text('address_unduhmantu')->nullable();
-            $table->longText('map_address_unduhmantu')->nullable();
+            $table->string('map_akad_latlng', 191)->nullable();
+            $table->string('map_resepsi_latlng', 191)->nullable();
+            $table->string('map_unduhmantu_latlng', 191)->nullable();
+            $table->text('gmap_akad_url')->nullable();
+            $table->text('gmap_resepsi_url')->nullable();
+            $table->text('gmap_unduhmantu_url')->nullable();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');

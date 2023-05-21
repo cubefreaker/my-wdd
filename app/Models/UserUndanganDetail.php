@@ -4,16 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class UserUndanganDetail extends Model
+class UserUndanganDetail extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
     
+    protected $table = 'user_undangan_detail';
+
     protected $fillable = [
         'user_id',
         'undangan_id',
-        'groom',
-        'bride',
+        'groom_name',
+        'bride_name',
         'groom_parent_text',
         'bride_parent_text',
         'date_akad',
@@ -25,10 +29,15 @@ class UserUndanganDetail extends Model
         'date_unduhmantu',
         'time_unduhmantu_start',
         'time_unduhmantu_end',
-        'address',
-        'map_address',
+        'address_akad',
+        'address_resepsi',
         'address_unduhmantu',
-        'map_address_unduhmantu',
+        'map_akad_latlng',
+        'map_resepsi_latlng',
+        'map_unduhmantu_latlng',
+        'gmap_akad_url',
+        'gmap_resepsi_url',
+        'gmap_unduhmantu_url',
     ];
 
     public function user()

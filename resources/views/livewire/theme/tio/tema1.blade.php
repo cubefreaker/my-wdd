@@ -6,39 +6,39 @@
         <ul class="flex justify-around place-items-center bg-white h-[45px] w-[80%] rounded-lg shadow"> 
             <li>
                 <a href="#home">
-                    <img class="w-[20px]" src="images/home.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/home.svg') }}" alt="">
                 </a>
             </li>
             <li>
                 <a href="#kalender">
-                    <img class="w-[20px]" src="images/profile.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/profile.svg') }}" alt="">
                 </a>
             </li>
             <li>
                 <a href="#akad">
-                    <img class="w-[20px]" src="images/kalender.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/kalender.svg') }}" alt="">
                 </a>
             </li><li>
                 <a href="#galeri">
-                    <img class="w-[20px]" src="images/galeri.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/galeri.svg') }}" alt="">
                 </a>
             </li><li>
                 <a href="#video">
-                    <img class="w-[20px]" src="images/hadiah.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/hadiah.svg') }}" alt="">
                 </a>
             </li>
             </li><li>
                 <a href="#pensil">
-                    <img class="w-[20px]" src="images/pensil.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/pensil.svg') }}" alt="">
                 </a>
             </li><li>
                 <a href="#hadiah">
-                    <img class="w-[20px]" src="images/chat.svg" alt="">
+                    <img class="w-[20px]" src="{{ asset('tio/images/chat.svg') }}" alt="">
                 </a>
             </li>
         </ul>
     </section>
-    <section id="home" class="h-screen flex flex-col justify-center place-items-center bg-[url(public/tio/images/tes.jpg)] text-[white]">
+    <section id="home" class="h-screen flex flex-col justify-center place-items-center bg-[url(/public/tio/images/tes.jpg)] text-[white]">
         <div class="mb-[10px] text-[#C75C89]">Minggu, 04 Juni 2023</div>
         <div class="text-[50px] text-black font-[400] font-[Alkatra]">Romeo & Juliet</div>
         <div class="mb-[20px] text-black italic">Hello, We are getting married</div>
@@ -54,21 +54,21 @@
         <div class="w-[50%] flex flex-col">
             <div class="flex text-center">
                 <div class="m-6 w-[50%] flex flex-col place-items-center">
-                    <img class="w-[80px]" src="images/mask.svg" alt="">
+                    <img class="w-[80px]" src="{{ asset('tio/images/mask.svg') }}" alt="">
                     Wajib Menggunakan Masker
                 </div>
                 <div class="m-6 w-[50%] flex flex-col place-items-center">
-                    <img class="w-[80px]" src="images/distance.svg" alt="">
+                    <img class="w-[80px]" src="{{ asset('tio/images/distance.svg') }}" alt="">
                     Saling Menjaga Jarak di Dalam Acara
                 </div>
             </div>
             <div class="flex text-center">
                 <div class="m-6 w-[50%] flex flex-col place-items-center">
-                    <img class="w-[80px]" src="images/greeting.svg" alt="">
+                    <img class="w-[80px]" src="{{ asset('tio/images/greeting.svg') }}" alt="">
                     Menggunakan salam namastee sebagai ganti berjabat tangan
                 </div>
                 <div class="m-6 w-[50%] flex flex-col place-items-center">
-                    <img class="w-[80px]" src="images/wash.svg" alt="">
+                    <img class="w-[80px]" src="{{ asset('tio/images/wash.svg') }}" alt="">
                     Jaga Kebersihan dengan Mencuci Tangan atau Handsanitizer</div>
             </div>
         </div>
@@ -81,7 +81,7 @@
         <div class="w-[80%] flex justify-around">        
             <div class="text-center m-6">
             <div class="text-[50px] text-black font-[400] font-[Alkatra]">
-                <img class="w-[200px] rounded-full" src="images/pp.jpg" alt="">
+                <img class="w-[200px] rounded-full" src="{{ asset('tio/images/pp.jpg') }}" alt="">
                 Romeo
              </div>
             <div>Romeo Montaque</div>
@@ -91,7 +91,7 @@
             </div>
             <div class="text-center m-6">
             <div class="text-[50px] text-black font-[400] font-[Alkatra]">
-                <img class="w-[200px] rounded-full" src="images/pp.jpg" alt="">
+                <img class="w-[200px] rounded-full" src="{{ asset('tio/images/pp.jpg') }}" alt="">
                 Juliet
             </div>
             <div>Juliet Capulet</div>
@@ -132,18 +132,18 @@
     <section id="galeri" class="h-screen flex flex-col justify-center place-items-center">
         <div class="text-[40px] text-black font-[400] font-[Alkatra]">Our gallery</div>
         <div class="grid grid-cols-4 gap-2">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
-            <img src="images/pp.jpg" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
         </div>
     </section>
     <section id="video" class="h-screen flex flex-col justify-center place-items-center mt-8">
@@ -153,7 +153,7 @@
         <div class="text-[40px] text-black font-[400] font-[Alkatra]">Our Story</div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="images/pp.jpg" alt="">
+                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Pertama Kenal</div>
@@ -163,7 +163,7 @@
         </div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="images/pp.jpg" alt="">
+                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Menyatakan Cinta</div>
@@ -173,7 +173,7 @@
         </div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="images/pp.jpg" alt="">
+                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Tunangan</div>
@@ -192,7 +192,7 @@
                     <h2>0123294357236</h2>
                 </div>
                 <div class="w-[50%]">
-                    <img class="w-[150px] h-[40px]" src="./images/bca.png" alt="" srcset="">
+                    <img class="w-[150px] h-[40px]" src="{{ asset('tio/images/bca.png') }}" alt="" srcset="">
                 </div>
             </div>
             <div class="flex flex-row p-6 mx-6 rounded-md border-2 shadow-md place-items-center">
@@ -202,7 +202,7 @@
                     <h2>0123294357236</h2>
                 </div>
                 <div class="w-[50%]">
-                    <img class="w-[150px] h-[40px]" src="./images/bca.png" alt="" srcset="">
+                    <img class="w-[150px] h-[40px]" src="{{ asset('tio/images/bca.png') }}" alt="" srcset="">
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
                 <h2>0123294357236</h2>
             </div>
             <div class="w-[40%]">
-                <img class="w-[90px] h-[90px]" src="./images/barcode.png" alt="" srcset="">
+                <img class="w-[90px] h-[90px]" src="{{ asset('tio/images/barcode.png') }}" alt="" srcset="">
             </div>
         </div>
     </section>

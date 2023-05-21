@@ -119,15 +119,19 @@ img {
 }
 
 .work .content {
-  @apply flex justify-around flex-wrap;
+  @apply grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4;
 }
 
 .work .content .workBx {
-  @apply w-1/2 p-[20px] flex justify-center;
+  @apply flex flex-col justify-center place-items-center;
 }
 
 .work .content .workBx img {
-  @apply max-w-full hover:scale-105 transition-[0.5s];
+  @apply my-4 w-[200px] h-[200px] md:w-[300px] md:h-[400px] object-cover hover:scale-105 transition-[0.5s];
+}
+
+.work .content .workBx p {
+  @apply text-xl font-semibold;
 }
 
 .testimonial .content {
