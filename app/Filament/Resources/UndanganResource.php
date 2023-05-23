@@ -61,11 +61,16 @@ class UndanganResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('nama_undangan')->label('Nama')->searchable()->sortable(),
-                TextColumn::make('undangan_group.nama_undangan_group')->label('Group')->searchable()->sortable(),
+                TextColumn::make('nama_undangan')->label('Nama')->searchable()->sortable()
+                    ->url(fn (Undangan $record): string => url("tema/{$record->id}"))
+                    ->openUrlInNewTab()->icon('heroicon-o-link')->iconPosition('after')->tooltip('Buka Demo Undangan'),
                 SpatieMediaLibraryImageColumn::make('cover')->collection('undanganGroupImg')->conversion('thumb'),
-                TextColumn::make('laravel_controller_class')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState()),
-                TextColumn::make('laravel_view_path')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState()),
+                TextColumn::make('undangan_group.nama_undangan_group')->label('Group')->searchable()->sortable(),
+                TextColumn::make('undangan_group.price_amount')->label('Harga')->getStateUsing(function ($record){
+                    return 'Rp. ' . number_format($record->undangan_group->price_amount, 0, ',', '.');
+                })->searchable()->sortable(),
+                TextColumn::make('laravel_controller_class')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState())->hidden(auth()->user()->hasRole('User')),
+                TextColumn::make('laravel_view_path')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState())->hidden(auth()->user()->hasRole('User')),
                 BadgeColumn::make('status')
                     ->enum([
                         'active' => 'Active',
