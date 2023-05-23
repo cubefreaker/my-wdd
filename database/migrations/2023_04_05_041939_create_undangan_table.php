@@ -13,6 +13,8 @@ class CreateUndanganTable extends Migration
             $table->unsignedBigInteger('undangan_group_id');
             $table->string('nama_undangan', 191);
             $table->string('laravel_controller_class', 191);
+            $table->string('laravel_view_path', 191);
+            $table->string('custom_css_class', 191)->nullable();
             $table->string('status', 20)->default('active')->comment('active, inactive');
             $table->timestamps();
 

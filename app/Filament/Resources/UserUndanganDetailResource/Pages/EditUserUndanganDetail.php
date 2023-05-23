@@ -16,10 +16,10 @@ class EditUserUndanganDetail extends EditRecord
             // Actions\DeleteAction::make(),
         ];
     }
-    
-    protected function getCreatedNotificationTitle(): ?string
+
+    protected function getSavedNotificationTitle(): ?string
     {
-        return 'User Undangan Detail Updated';
+        return 'User undangan updated';
     }
 
     protected function getRedirectUrl(): string

@@ -15,12 +15,7 @@ class Undangan extends Model implements HasMedia
 
     protected $table = 'undangan';
 
-    protected $fillable = [
-        'undangan_group_id',
-        'nama_undangan',
-        'laravel_controller_class',
-        'status', //'active', 'inactive'
-    ];
+    protected $guarded = ['id'];
 
     public function undangan_group()
     {

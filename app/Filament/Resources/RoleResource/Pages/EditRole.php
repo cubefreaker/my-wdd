@@ -17,7 +17,7 @@ class EditRole extends EditRecord
         ];
     }
 
-    protected function getCreatedNotificationTitle(): ?string
+    protected function getSavedNotificationTitle(): ?string
     {
         return 'Role updated';
     }

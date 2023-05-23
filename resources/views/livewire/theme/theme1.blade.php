@@ -23,9 +23,9 @@
       <h2 class="main-theme-h2 mt-4 md:mt-2 slide-in-top">The Wedding of</h2>
       <img id="figure1" class="mx-auto w-[80%] md:w-[20%] !-scale-x-100 scale-in-center" src="{{ asset('/images/figure.png') }}" alt="">
       <div id="coupleName" class="flex flex-col flex-col-reverse xs:flex-row xs:flex-row-reverse justify-center mt-10 md:mt-8">
-        <h1 id="brideName" class="main-theme-h1 slide-in-left">{{ explode(' ', $detailUndangan->bride_name)[0] }}</h1>
+        <h1 id="brideName" class="main-theme-h1 slide-in-left">{{ $detailUndangan->bride_short_name }}</h1>
         <h1 class="main-theme-h1 scale-in-center">&nbsp;&&nbsp;</h1>
-        <h1 id="groomName" class="main-theme-h1 slide-in-right">{{ explode(' ', $detailUndangan->groom_name)[0] }}</h1>
+        <h1 id="groomName" class="main-theme-h1 slide-in-right">{{ $detailUndangan->groom_short_name }}</h1>
       </div>
       <div id="yth" class="text-[1.5em] md:mb-2 slide-in-bottom"></div>
       <button id="btnOpen" class="w-32 border border-[navy] hover:bg-slate-100 hover:text-gray-700 font-bold py-1 px-2 rounded inline-flex items-center z-[999]">
@@ -148,7 +148,8 @@
           <p>{{ $detailUndangan->address_akad }}</p>
         </div>
       </span>
-      <span id="groomSchedule">
+
+      <span id="groomSchedule" class="{{ $detailUndangan->use_unduhmantu == 0 ? 'hidden' : '' }}">
         <div class="flex flex-col md:flex-row justify-center place-items-center">
           <div class="event-card w-72 h-42 p-8 flex flex-col justify-center">
             <p class="font-[adlery-pro] text-4xl my-4" data-aos="fade-bottom" data-aos-duration="500">Ngunduh Mantu</p>
@@ -267,12 +268,12 @@
   // magnification with which the map will start
   const zoom = 12;
   // co-ordinates
-  const latView = {{ (trim(explode(',', $detailUndangan->map_akad_latlng)[0]) + trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[0])) / 2 }};
-  const lngView = {{ (trim(explode(',', $detailUndangan->map_akad_latlng)[1]) + trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[1])) / 2 }};
+  const latView = {{ $detailUndangan->map_unduhmantu_latlng ? (trim(explode(',', $detailUndangan->map_akad_latlng)[0]) + trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[0])) / 2 : trim(explode(',', $detailUndangan->map_akad_latlng)[0]) }};
+  const lngView = {{ $detailUndangan->map_unduhmantu_latlng ? (trim(explode(',', $detailUndangan->map_akad_latlng)[1]) + trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[1])) / 2 : trim(explode(',', $detailUndangan->map_akad_latlng)[1])}};
   const lat1 = {{ trim(explode(',', $detailUndangan->map_akad_latlng)[0]) }};
   const lng1 = {{ trim(explode(',', $detailUndangan->map_akad_latlng)[1]) }};
-  const lat2 = {{ trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[0]) }};
-  const lng2 = {{ trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[1]) }};
+  const lat2 = {{ $detailUndangan->map_unduhmantu_latlng ? trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[0]) : trim(explode(',', $detailUndangan->map_akad_latlng)[0]) }};
+  const lng2 = {{ $detailUndangan->map_unduhmantu_latlng ? trim(explode(',', $detailUndangan->map_unduhmantu_latlng)[1]) : trim(explode(',', $detailUndangan->map_akad_latlng)[1]) }};
 
   // calling map
   const map = L.map("map", config).setView([latView, lngView], zoom);
@@ -299,7 +300,7 @@
   const htmlPopup1 = `
       <div class="flex flex-col justify-center">
           <p><Strong>Lokasi Akad & Resepsi</Strong></p>
-          <a href="https://goo.gl/maps/5kccbJ7nTCEnARqq8"  target="_blank" class="flex justify-center border border-[navy] hover:bg-slate-100 hover:text-gray-700 py-1 px-2 rounded items-center">
+          <a href="{{ $detailUndangan->gmap_akad_url }}"  target="_blank" class="flex justify-center border border-[navy] hover:bg-slate-100 hover:text-gray-700 py-1 px-2 rounded items-center">
               <img class="mr-2" src="/icons/map.svg" width="15" alt="">
               GoogleMap
           </a>
@@ -309,7 +310,7 @@
   const htmlPopup2 = `
       <div class="flex flex-col justify-center">
           <p><Strong>Lokasi Ngunduh Mantu</Strong></p>
-          <a href="https://goo.gl/maps/MtJyM7Ttvo5hnPAq8"  target="_blank" class="flex justify-center border border-[navy] hover:bg-slate-100 hover:text-gray-700 py-1 px-2 rounded items-center">
+          <a href="{{ $detailUndangan->gmap_unduhmantu_url }}"  target="_blank" class="flex justify-center border border-[navy] hover:bg-slate-100 hover:text-gray-700 py-1 px-2 rounded items-center">
               <img class="mr-2" src="/icons/map.svg" width="15" alt="">
               GoogleMap
           </a>
@@ -373,14 +374,17 @@
       document.getElementById('coupleFigure').classList.remove('md:flex-row-reverse');
 
       document.getElementById('addCalendarBride').setAttribute('location', `${lat1}, ${lng1}`);
-      document.getElementById('addCalendarGroom').setAttribute('location', `${lat2}, ${lng2}`);
-
+      
       L.marker([lat1, lng1], { icon: house1 }).bindPopup(htmlPopup1, { closeOnClick: false, autoClose: false }).on("add", function (event) {
-          event.target.openPopup();
+        event.target.openPopup();
       }).addTo(map);
-      L.marker([lat2, lng2], { icon: house2 }).bindPopup(htmlPopup2, { closeOnClick: false, autoClose: false }).on("add", function (event) {
-          event.target.openPopup();
-      }).addTo(map);
+      
+      if('{{ $detailUndangan->use_unduhmantu }}' == '1' ) {
+        document.getElementById('addCalendarGroom').setAttribute('location', `${lat2}, ${lng2}`);
+        L.marker([lat2, lng2], { icon: house2 }).bindPopup(htmlPopup2, { closeOnClick: false, autoClose: false }).on("add", function (event) {
+            event.target.openPopup();
+        }).addTo(map);
+      }
   }
 
   //Audio

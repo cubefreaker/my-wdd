@@ -109,8 +109,9 @@ class DatabaseSeeder extends Seeder
         Undangan::create([
             'undangan_group_id' => 1,
             'nama_undangan' => 'Tema 1',
-            // 'thumbnail_undangan' => '/images/thumbnail/theme1.png',
             'laravel_controller_class' => '\App\Http\Livewire\Theme\Theme1',
+            'laravel_view_path' => 'livewire.theme.theme1',
+            'custom_css_class' => 'main-theme1',
             'status' => 'active',
         ]);
 
@@ -118,6 +119,7 @@ class DatabaseSeeder extends Seeder
             'undangan_group_id' => 2,
             'nama_undangan' => 'Tema 2',
             'laravel_controller_class' => '\App\Http\Livewire\Theme\Wisnu\Tema1',
+            'laravel_view_path' => 'livewire.theme.wisnu.tema1',
             'status' => 'active',
         ]);
 
@@ -125,6 +127,7 @@ class DatabaseSeeder extends Seeder
             'undangan_group_id' => 3,
             'nama_undangan' => 'Tema 3',
             'laravel_controller_class' => '\App\Http\Livewire\Theme\Tio\Tema1',
+            'laravel_view_path' => 'livewire.theme.tio.tema1',
             'status' => 'active',
         ]);
     }
@@ -136,8 +139,11 @@ class DatabaseSeeder extends Seeder
             'is_sample' => 1,
             'user_id' => 1,
             'undangan_id' => 1,
+            'slug' => 'romeo-juliet',
             'groom_name' => 'Romeo Montague',
+            'groom_short_name' => 'Romeo',
             'bride_name' => 'Juliet Capulet',
+            'bride_short_name' => 'Juliet',
             'groom_parent_text' => 'Putra pertama dari Bapak Montague dan Ibu Montague',
             'bride_parent_text' => 'Putri pertama dari Bapak Capulet dan Ibu Capulet',
             'date_akad' => '2024-01-01',
@@ -158,8 +164,12 @@ class DatabaseSeeder extends Seeder
             'gmap_akad_url' => 'https://goo.gl/maps/i6VyY5wJ2GwsKTCY8',
             'gmap_resepsi_url' => 'https://goo.gl/maps/i6VyY5wJ2GwsKTCY8',
             'gmap_unduhmantu_url' => 'https://goo.gl/maps/HXYcd13PioPiCvzs9',
+            'use_unduhmantu' => 1,
+            'status' => 'publish',
         ]);
 
-        $undanganDetail->addMedia(public_path('audio/backsound.mp3'))->toMediaCollection('undanganDetailBacksound');
+        if(file_exists(public_path('audio/backsound.mp3'))) {
+            $undanganDetail->addMedia()->toMediaCollection('undanganDetailBacksound');
+        }
     }
 }

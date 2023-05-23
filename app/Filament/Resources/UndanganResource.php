@@ -18,6 +18,7 @@ use Filament\Tables\Columns\BadgeColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class UndanganResource extends Resource
 {
@@ -34,12 +35,9 @@ class UndanganResource extends Resource
             ->schema([
                 Card::make()->schema([
                     Select::make('undangan_group_id')->label('Group')
-                        ->relationship('undangan_group', 'id')
-                        ->getOptionLabelFromRecordUsing(fn ($record) => $record->nama_undangan_group)
                         ->searchable()
-                        ->getSearchResultsUsing(fn (string $query, Builder $queryBuilder) => $queryBuilder->where('nama_undangan_group', 'like', '%' . $query . '%'))
                         ->required()
-                        ->preload(),
+                        ->options(UndanganGroup::where('status', 'active')->get()->pluck('nama_undangan_group', 'id')),
                     Forms\Components\TextInput::make('nama_undangan')->label('Nama')
                         ->required()
                         ->maxLength(191),
@@ -54,7 +52,7 @@ class UndanganResource extends Resource
                         ->searchable()
                         ->required()
                         ->default('active'),
-                    SpatieMediaLibraryFileUpload::make('cover')->collection('undanganGroupImg'),
+                    SpatieMediaLibraryFileUpload::make('cover')->collection('undanganGroupImg')->conversion('thumb'),
                 ])->columns(2),
             ]);
     }
@@ -63,11 +61,11 @@ class UndanganResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_undangan')->label('Nama')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('undangan_group.nama_undangan_group')->label('Group')->searchable()->sortable(),
-                // Tables\Columns\TextColumn::make('thumbnail_undangan')->searchable(),
-                SpatieMediaLibraryImageColumn::make('cover')->collection('undanganGroupImg'),
-                Tables\Columns\TextColumn::make('laravel_controller_class')->searchable(),
+                TextColumn::make('nama_undangan')->label('Nama')->searchable()->sortable(),
+                TextColumn::make('undangan_group.nama_undangan_group')->label('Group')->searchable()->sortable(),
+                SpatieMediaLibraryImageColumn::make('cover')->collection('undanganGroupImg')->conversion('thumb'),
+                TextColumn::make('laravel_controller_class')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState()),
+                TextColumn::make('laravel_view_path')->searchable()->limit(30)->tooltip(fn (TextColumn $column) => $column->getState()),
                 BadgeColumn::make('status')
                     ->enum([
                         'active' => 'Active',
@@ -76,20 +74,21 @@ class UndanganResource extends Resource
                         'success' => 'active',
                         'danger' => 'inactive',
                     ])->sortable(),
-                // Tables\Columns\TextColumn::make('created_at')
+                // TextColumn::make('created_at')
                 //     ->dateTime(),
-                // Tables\Columns\TextColumn::make('updated_at')
+                // TextColumn::make('updated_at')
                 //     ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                // Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
     

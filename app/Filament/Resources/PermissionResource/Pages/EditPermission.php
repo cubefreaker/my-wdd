@@ -17,7 +17,7 @@ class EditPermission extends EditRecord
         ];
     }
 
-    protected function getCreatedNotificationTitle(): ?string
+    protected function getSavedNotificationTitle(): ?string
     {
         return 'Permission updated';
     }

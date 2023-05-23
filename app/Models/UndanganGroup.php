@@ -9,13 +9,9 @@ class UndanganGroup extends Model
 {
     use HasFactory;
 
-    protected $table = 'undangan_group';
+    protected $guarded = ['id'];
 
-    protected $fillable = [
-        'nama_undangan_group',
-        'price_amount',
-        'status', //'active', 'inactive' 
-    ];
+    protected $table = 'undangan_group';
 
     protected $casts = [
         'price_amount' => 'decimal:2'

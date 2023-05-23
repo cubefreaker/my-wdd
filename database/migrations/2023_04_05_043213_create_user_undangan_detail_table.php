@@ -16,8 +16,11 @@ return new class extends Migration
             $table->boolean('is_sample', 1)->default(0)->comment('0: not sample, 1: sample data');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('undangan_id');
+            $table->string('slug', 191)->unique();
             $table->string('groom_name', 150);
+            $table->string('groom_short_name', 50);
             $table->string('bride_name', 150);
+            $table->string('bride_short_name', 50);
             $table->string('groom_parent_text', 255)->nullable();
             $table->string('bride_parent_text', 255)->nullable();
             $table->date('date_akad')->nullable();
@@ -38,6 +41,8 @@ return new class extends Migration
             $table->text('gmap_akad_url')->nullable();
             $table->text('gmap_resepsi_url')->nullable();
             $table->text('gmap_unduhmantu_url')->nullable();
+            $table->boolean('use_unduhmantu', 1)->default(0)->comment('0: not use, 1: use');
+            $table->string('status', 10)->default('draft')->comment('draft, publish');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');

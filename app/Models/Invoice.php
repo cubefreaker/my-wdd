@@ -9,15 +9,9 @@ class Invoice extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'undangan_id',
-        'notes',
-        'remark',
-        'price_amount',
-        'paid_amount',
-        'paid_status', //'paid', 'unpaid'
-    ];
+    protected $table = 'invoice';
+    
+    protected $guarded = ['id'];
 
     protected $casts = [
         'price_amount' => 'decimal:2',

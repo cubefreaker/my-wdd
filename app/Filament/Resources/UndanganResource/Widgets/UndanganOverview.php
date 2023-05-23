@@ -15,7 +15,11 @@ class UndanganOverview extends StatsOverviewWidget
     {
         return [
             Card::make('Total Tema Undangan', Undangan::all()->count()),
-            Card::make('Total Undangan User', UserUndanganDetail::all()->count()),
+            Card::make('Total Undangan User', UserUndanganDetail::where('is_sample', 0)->where(function($query){
+                if(auth()->user()->hasRole('User')){
+                    $query->where('user_id', auth()->id());
+                }
+            })->count()),
         ];
     }
 }

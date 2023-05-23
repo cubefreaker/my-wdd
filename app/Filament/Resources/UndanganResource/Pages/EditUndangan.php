@@ -17,7 +17,7 @@ class EditUndangan extends EditRecord
         ];
     }
 
-    protected function getCreatedNotificationTitle(): ?string
+    protected function getSavedNotificationTitle(): ?string
     {
         return 'Undangan Updated';
     }

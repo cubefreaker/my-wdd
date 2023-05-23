@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
@@ -47,11 +48,9 @@ class UserResource extends Resource
                         ->dehydrated(fn ($state) => filled($state))
                         ->required(fn (Page $livewire) => $livewire instanceof CreateUser),
                     Forms\Components\Select::make('roles')
-                        ->relationship('roles', 'name')
                         ->multiple()
                         ->required()
-                        ->disabled(fn ($state) => auth()->user()->roles->contains('name', 'Super Admin'))
-                        ->preload(),
+                        ->options(Role::where('name', '!=', 'Super Admin')->pluck('name', 'id')),
                 ])->columns(2),
             ]);
     }
