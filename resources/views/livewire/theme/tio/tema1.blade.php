@@ -39,35 +39,35 @@
         </ul>
     </section>
     <section id="home" class="h-screen flex flex-col justify-center place-items-center bg-[url(/public/tio/images/tes.jpg)] text-[white]">
-        <div class="mb-[10px] text-[#C75C89]">Minggu, 04 Juni 2023</div>
-        <div class="text-[50px] text-black font-[400] font-[Alkatra]">Romeo & Juliet</div>
-        <div class="mb-[20px] text-black italic">Hello, We are getting married</div>
-        <div class="italic text-black">Dear</div>
-        <div class="text-[#C75C89]">Ayana</div>
-        <div class="italic text-black">Jakarta</div>
+        <div class="mb-[10px] text-[#C75C89]"data-aos="fade-down">Minggu, 04 Juni 2023</div>
+        <div class="text-[50px] text-black font-[400] font-[Alkatra]"data-aos="fade-down">{{ $detailUndangan->groom_short_name }} & {{ $detailUndangan->bride_short_name }}</div>
+        <div class="mb-[20px] text-black italic"data-aos="fade-down">Hello, We are getting married</div>
+        <div class="italic text-black"data-aos="fade-down">Dear</div>
+        <div class="text-[#C75C89]"data-aos="fade-left">Ayana</div>
+        <div class="italic text-black"data-aos="fade-down">Jakarta</div>
     </section>
     <section id="profile" class="h-screen flex flex-col place-items-center justify-center">
-        <div class="font-bold text-[20px]">NOTES</div>
-        <div class="italic underline underline-offset-4">Protocol covid-19</div>
-        <div class="w-[50%] text-center">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi,
+        <div class="font-bold text-[20px]"data-aos="fade-down">NOTES</div>
+        <div class="italic underline underline-offset-4"data-aos="fade-down">Protocol covid-19</div>
+        <div class="w-[50%] text-center"data-aos="fade-down">Dalam upaya mengurangi penyebaran Covid 19 pada masa pandemi,
         kami harapkan kedatangan para tamu undangan agar menjalankan protokol yang berlaku.</div>
         <div class="w-[50%] flex flex-col">
             <div class="flex text-center">
-                <div class="m-6 w-[50%] flex flex-col place-items-center">
-                    <img class="w-[80px]" src="{{ asset('tio/images/mask.svg') }}" alt="">
+                <div class="m-6 w-[50%] flex flex-col place-items-center"data-aos="fade-right">
+                    <img class="w-[80px]" src="{{ asset('tio/images/mask.svg') }}" alt=""">
                     Wajib Menggunakan Masker
                 </div>
-                <div class="m-6 w-[50%] flex flex-col place-items-center">
+                <div class="m-6 w-[50%] flex flex-col place-items-center"data-aos="fade-left">
                     <img class="w-[80px]" src="{{ asset('tio/images/distance.svg') }}" alt="">
                     Saling Menjaga Jarak di Dalam Acara
                 </div>
             </div>
             <div class="flex text-center">
-                <div class="m-6 w-[50%] flex flex-col place-items-center">
+                <div class="m-6 w-[50%] flex flex-col place-items-center"data-aos="fade-right">
                     <img class="w-[80px]" src="{{ asset('tio/images/greeting.svg') }}" alt="">
                     Menggunakan salam namastee sebagai ganti berjabat tangan
                 </div>
-                <div class="m-6 w-[50%] flex flex-col place-items-center">
+                <div class="m-6 w-[50%] flex flex-col place-items-center"data-aos="fade-left">
                     <img class="w-[80px]" src="{{ asset('tio/images/wash.svg') }}" alt="">
                     Jaga Kebersihan dengan Mencuci Tangan atau Handsanitizer</div>
             </div>
@@ -80,24 +80,26 @@
             Ya Allah, perkenankanlah kami merangkai kasih sayang yang Kau ciptakan di antara putra-putri kami:</div>
         <div class="w-[80%] flex justify-around">        
             <div class="text-center m-6">
-            <div class="text-[50px] text-black font-[400] font-[Alkatra]">
-                <img class="w-[200px] rounded-full" src="{{ asset('tio/images/pp.jpg') }}" alt="">
-                Romeo
-             </div>
-            <div>Romeo Montaque</div>
-            <div>Putra Pertama dari Pasangan</div>
-            <div class="text-[#C75C8A]">Bambang & Mulyani</div>
-            <div>Yogyakarta</div>
+                <div class="flex justify-center">
+                    <img class="w-[250px] h-[250px] object-fit rounded-full" src="{{ asset($detailUndangan->getFirstMediaUrl('fotoPengantinPria', 'thumb')) }}" alt="">
+                </div>
+                <div class="text-[50px] text-black font-[400] font-[Alkatra]">
+                    {{ $detailUndangan->groom_short_name }}
+                </div>
+                <div>{{ $detailUndangan->groom_name }}</div>
+                <div>{{ $detailUndangan->groom_parent_text }}</div>
+                <div>Yogyakarta</div>
             </div>
             <div class="text-center m-6">
-            <div class="text-[50px] text-black font-[400] font-[Alkatra]">
-                <img class="w-[200px] rounded-full" src="{{ asset('tio/images/pp.jpg') }}" alt="">
-                Juliet
-            </div>
-            <div>Juliet Capulet</div>
-            <div>Putri Kedua dari Pasangan</div>
-            <div class="text-[#C75C8A]">Joko & Siti</div>
-            <div>Surakarta</div>
+                <div class="flex justify-center">
+                    <img class="w-[250px] h-[250px] object-fit rounded-full" src="{{ asset($detailUndangan->getFirstMediaUrl('fotoPengantinWanita', 'thumb')) }}" alt="">
+                </div>
+                <div class="text-[50px] text-black font-[400] font-[Alkatra]">
+                    {{ $detailUndangan->bride_short_name }}
+                </div>
+                <div>{{ $detailUndangan->bride_name }}</div>
+                <div>{{ $detailUndangan->bride_parent_text }}</div>
+                <div>Surakarta</div>
             </div>
         </div>
     </section>
@@ -105,45 +107,38 @@
         <div class=" flex">
             <div class="w-[100%] text-center m-3">
                 <div class="font-bold">Akad Nikah</div>
-                <div>Minggu, 4 Juni 2023</div>
-                <div>08:00 - 09:00 WIB</div>
+                <div class="font-semibold">{{$detailUndangan->date_akad}}</div>
+                <div>{{$detailUndangan->time_akad_start}} - {{$detailUndangan->time_akad_end}}</div>
                 <div>Masjid Kampus UGM</div>
-                <div>Jl. Prof. DR. Drs Notonagoro, Karang Malang,<br> Caturtunggal, Kec. Depok, Kabupaten Sleman,<br> Yogyakarta</div>
-                <div class="mt-2 font-semibold">Google Map</div>
+                <div>{{$detailUndangan->address_akad}}</div>
+                <a href="{{ $detailUndangan->gmap_akad_url}}" class="text-xs mx-10 w-[150px] font-semibold text-black bg-slate mt-7 py-1 px-8 ease-in-out rounded-full hover:shadow-lg hover:opacity-80 transition duration-300">Google Maps</a>
             </div>
             <div class="w-[100%] text-center m-3">
                 <div class="font-bold">Resepsi</div>
-                <div>Minggu, 4 Juni 2023</div>
-                <div>09:00 - Selesai WIB</div>
+                <div class="font-semibold">{{$detailUndangan->date_resepsi}}</div>
+                <div>{{$detailUndangan->time_resepsi_start}} - {{$detailUndangan->time_resepsi_end}}</div>
                 <div>Jogja Expo Center</div>
-                <div>Jl. Wonocatur, Banguntapan, Bantul,<br> Yogyakarta</div>
-                <div class="mt-2 font-semibold">Google Map</div>
+                <div>{{$detailUndangan->address_resepsi}}</div>
+                <a href="{{ $detailUndangan->gmap_resepsi_url}}" class="text-xs mx-10 w-[150px] font-semibold text-black bg-slate mt-7 py-1 px-8 ease-in-out rounded-full hover:shadow-lg hover:opacity-80 transition duration-300">Google Maps</a>
             </div>
             <div class="w-[100%] text-center m-3">
                 <div class="font-bold">Unduh Mantu</div>
-                <div>Sabtu, 10 Juni 2023</div>
-                <div>09:00 - Selesai WIB</div>
+                <div>{{$detailUndangan->date_unduhmantu}}</div>
+                <div>{{$detailUndangan->time_unduhmantu_start}} - {{$detailUndangan->time_unduhmantu_end}}</div>
                 <div>Rumah Mempelai Wanita</div>
-                <div>Jl. Surya, Jebres,<br> Kota Surakarta</div>
-                <div class="mt-2 font-semibold">Google Map</div>
+                <div>{{$detailUndangan->address_unduhmantu}}</div>
+                <a href="{{ $detailUndangan->gmap_unduhmantu_url}}" class="text-xs mx-10 w-[150px] font-semibold text-black bg-slate mt-7 py-1 px-8 ease-in-out rounded-full hover:shadow-lg hover:opacity-80 transition duration-300">Google Maps</a>
             </div>
         </div>
     </section>
     <section id="galeri" class="h-screen flex flex-col justify-center place-items-center">
         <div class="text-[40px] text-black font-[400] font-[Alkatra]">Our gallery</div>
         <div class="grid grid-cols-4 gap-2">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
-            <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+            @foreach($detailUndangan->getMedia('fotoGaleriUndangan') as $foto)
+                <div class="flex justify-center">  
+                    <img class="w-[250px] h-[250px] object-contain" src="{{ asset($foto->getUrl()) }}" alt="">
+                </div>
+            @endforeach        
         </div>
     </section>
     <section id="video" class="h-screen flex flex-col justify-center place-items-center mt-8">
@@ -153,7 +148,7 @@
         <div class="text-[40px] text-black font-[400] font-[Alkatra]">Our Story</div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+                <img  class="w-[250px] h-" src="{{ asset('tio/images/1.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Pertama Kenal</div>
@@ -163,7 +158,7 @@
         </div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+                <img  class="w-[250px]" src="{{ asset('tio/images/2.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Menyatakan Cinta</div>
@@ -173,7 +168,7 @@
         </div>
         <div class="flex w-[80%] m-2">
             <div class="mr-3">
-                <img src="{{ asset('tio/images/pp.jpg') }}" alt="">
+                <img class="w-[250px]" src="{{ asset('tio/images/3.jpg') }}" alt="">
             </div>
             <div>
                 <div class="font-bold">Tunangan</div>
@@ -206,6 +201,7 @@
                 </div>
             </div>
         </div>
+        <div class="flex justify-center">
         <div class="flex flex-row w-[30%] p-6 mt-9 rounded-md border-2 shadow-md place-items-center">
             <div class="flex flex-col w-[60%] ">
                 <h1>QR CODE/QRIS</h1>
